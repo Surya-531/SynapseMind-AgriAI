@@ -5,7 +5,7 @@ Hi, we are the **SynapseMind Team** 👋
 ## Steps to Run the Project  
 
 ### Step 1  
-Go to the **`FINAL`** folder and run the Python application:  
+Go to the **`FINAL`** folder located inside the synapsemind folder and run the Python application:  
 ```bash
 python app.py
 ```
