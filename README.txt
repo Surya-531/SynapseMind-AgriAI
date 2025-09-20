@@ -88,7 +88,7 @@ npm
  / yarn
 
 Clone Repository
-git clone https://github.com/<your-team>/synapsemind-agri-ai.git
+git clone https://github.com/Surya-531/synapsemind-agri-ai.git
 cd synapsemind-agri-ai
 
 Install Dependencies
