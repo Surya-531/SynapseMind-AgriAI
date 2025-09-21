@@ -4,9 +4,14 @@
 
 📌 Overview
 
-         SynapseMind Agri-AI is a decentralized AI application built on the Internet Computer Protocol (ICP). It empowers small and marginal farmers with transparent, trustless, and censorship-resistant agricultural advisory services.
+SynapseMind Agri-AI is a decentralized AI platform designed to empower small and marginal farmers with personalized crop recommendations, yield prediction, disease detection, and weather insights.
+Built on the Internet Computer Protocol (ICP), 
+      our solution ensures:
+                Transparency ✅
+                Decentralized intelligence ✅
+                On-chain AI inference without middlemen ✅
 
-By leveraging on-chain AI models, IoT data, and smart contracts, we ensure that farmers receive secure, reliable, and verifiable predictions without middlemen.
+This aligns with WCHL 2025 Track: **AI - Decentralized Intelligence, building trustless and scalable AI applications**.
 
 Our solution combines:
       
@@ -38,15 +43,22 @@ We deploy our solution on Internet Computer (ICP) because:
          ⚡ Scalability → Runs at Web2 speed with Web3 security.
          💰 Low Cost → Cycles make running AI models cheaper than cloud.
 
-✨ Features
+✨ Key Features
 
-         ✅ AI-Powered Crop Recommendation
-         ✅ Yield & Profit Prediction
-         ✅ Plant Disease Detection (CNN model)
-         ✅ Weather & Climate Insights (IoT + AI)
-         ✅ Multilingual Farmer Dashboard
-         ✅ On-Chain AI Transparency (ICP canisters)
-         ✅ Secure & Scalable Decentralized Infrastructure
+          🌾 Crop Recommendation Engine – Suggests best crops based on soil, climate, and region.
+          📈 Yield & Profit Prediction – Helps farmers estimate production and revenue.
+          🦠 Crop Disease Detection – AI-powered plant disease classifier using CNN models.
+          ☁️ Weather & Climate Forecasting – LSTM/RNN-based predictive insights with extreme weather alerts.
+          🤖 Chatbot Advisor – Multilingual AI assistant for farmer queries.
+          🔗 ICP Integration – Smart contracts (canisters) for storing predictions & ensuring decentralization.
+
+🛠️ Tech Stack
+          Frontend: React + TailwindCSS
+          Backend: Flask (Python) + ICP Canisters (Motoko/Rust)
+          AI Models: TensorFlow/Keras (Crop recommendation, disease detection, weather forecasting, crop production)
+          Database: ICP Stable Storage / Local development uses SQLite
+          Hosting: Deployed on ICP Mainnet
+
 
 🏗️ Architecture
 +-----------------------+
@@ -87,21 +99,77 @@ DFINITY SDK (dfx)
 npm
  / yarn
 
-Clone Repository
-git clone https://github.com/Surya-531/synapsemind-agri-ai.git
+⚙️ Installation & Setup
+
+1️⃣ Clone Repository
+git clone https://github.com/<your-repo>/synapsemind-agri-ai.git
 cd synapsemind-agri-ai
 
-Install Dependencies
+2️⃣ Install Dependencies
+Backend (Python)
+cd backend
+python -m venv venv
+source venv/bin/activate    # For Mac/Linux
+venv\Scripts\activate       # For Windows
+pip install -r requirements.txt
+
+Frontend (React)
+cd frontend
 npm install
 
-Start Local ICP Environment
-dfx start --background
+3️⃣ Start Backend (Model API)
+cd backend
+python app.py
 
-Deploy Canisters
-dfx deploy
 
-Run Development Server
-npm run dev
+By default, backend runs on http://127.0.0.1:5000/
+
+4️⃣ Start Frontend (React UI)
+cd frontend
+npm start
+
+
+Frontend runs on http://localhost:3000/
+
+🌐 Running Locally
+
+Open two terminals:
+One for backend (Flask)
+One for frontend (React)
+After both are running:
+Visit http://localhost:3000/   to use the web interface.
+
+The frontend communicates with the Flask backend at http://127.0.0.1:5000/
+.
+
+Upload a leaf image (for disease detection) or enter soil/weather data (for crop recommendation).
+
+Get predictions instantly.
+
+ICP Integration — On-chain Logging & Authentication
+
+We integrate the Internet Computer (ICP) as follows:
+
+1. Internet Identity (II)
+   - Farmers authenticate with II (passwordless) to obtain a principal.
+   - Authentication is performed via the frontend using `@dfinity/auth-client.
+
+2. On-chain Logging Canister
+   - A Motoko canister `log_canister` stores records of input → prediction with timestamp and principal.
+   - This ensures verifiable, tamper-proof records on ICP.
+
+3. Flow (Hybrid)
+   - The ML model runs off-chain (backend / Flask) due to compute constraints.
+   - After inference, the frontend calls the canister to persist a hashed record of inputs and prediction on-chain.
+   - UI displays canister ID and stored records so judges can verify.
+
+4. Commands (local dev)
+   - `dfx start --background`
+   - `cd ic-canisters/log_canister`
+   - `dfx deploy`
+   - Retrieve `canister_id` from `.dfx/local/canister_ids.json` and include it in the README.
+
+
 
 🔗 Integration Details
 
@@ -123,13 +191,6 @@ Frontend:
     Farmer dashboard (Next.js + Tailwind).
     Multilingual support (English, Hindi, Tamil, etc.).
     API integration with deployed ICP backend.
-
-🚀 Deployment
-
-Project is deployed on ICP Mainnet.
-Canister IDs:
-Backend Canister: xxxx-xxxx-xxxx-xxxx
-Frontend Canister: yyyy-yyyy-yyyy-yyyy
 
 👨‍👩‍👧 Team
 
