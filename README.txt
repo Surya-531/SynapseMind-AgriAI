@@ -11,42 +11,42 @@ By leveraging on-chain AI models, IoT data, and smart contracts, we ensure that 
 Our solution combines:
       
       Decentralized AI inference hosted on ICP canisters.
-      
       Crop recommendation, yield prediction, and disease detection models.
-      
       IoT-driven weather & soil monitoring integration.
-      
       Farmer-friendly WebApp & Mobile UI with multilingual support.
 
 🚜 Problem We Solve
 
       Farmers lack trustworthy agricultural advisory systems.
-      
       Centralized platforms often compromise data privacy and transparency.
-      
       Climate change and unpredictable weather patterns reduce yields.
-      
       Smallholder farmers cannot afford private advisory services.
 
 💡 Solution
       
       AI Models on ICP → Ensure predictions (crop yield, disease detection, weather alerts) are transparent and tamper-proof.
-      
       IoT Integration → Sensors feed real-time soil and climate data.
-      
       Web3 dApp → Farmers access advisory via a decentralized frontend.
-      
       Trustless Incentive Model → Advisors and data providers can be rewarded via smart contracts.
+
+💡 Why ICP?
+
+We deploy our solution on Internet Computer (ICP) because:
+         🔒 Internet Identity → Farmers log in without passwords, securely.
+         🛠️ Canisters → AI logic & advisory services run in decentralized containers.
+         🌐 On-Chain AI → Predictions stored/verifiable on-chain.
+         ⚡ Scalability → Runs at Web2 speed with Web3 security.
+         💰 Low Cost → Cycles make running AI models cheaper than cloud.
 
 ✨ Features
 
-✅ AI-Powered Crop Recommendation
-✅ Yield & Profit Prediction
-✅ Plant Disease Detection (CNN model)
-✅ Weather & Climate Insights (IoT + AI)
-✅ Multilingual Farmer Dashboard
-✅ On-Chain AI Transparency (ICP canisters)
-✅ Secure & Scalable Decentralized Infrastructure
+         ✅ AI-Powered Crop Recommendation
+         ✅ Yield & Profit Prediction
+         ✅ Plant Disease Detection (CNN model)
+         ✅ Weather & Climate Insights (IoT + AI)
+         ✅ Multilingual Farmer Dashboard
+         ✅ On-Chain AI Transparency (ICP canisters)
+         ✅ Secure & Scalable Decentralized Infrastructure
 
 🏗️ Architecture
 +-----------------------+
@@ -108,59 +108,41 @@ npm run dev
 AI Models:
 
     Crop Recommendation → RandomForest, XGBoost
-    
     Yield Prediction → LSTM, RNN models
-    
     Disease Detection → CNN (Keras/TensorFlow)
-    
     Weather Forecasting → IoT sensor + ML time-series models
 
 ICP Canisters:
 
     Store AI weights & inference results.
-    
     Smart contracts for advisory requests & rewards.
-    
     dfx.json manages canister deployment.
 
 Frontend:
 
     Farmer dashboard (Next.js + Tailwind).
-    
     Multilingual support (English, Hindi, Tamil, etc.).
-    
     API integration with deployed ICP backend.
 
 🚀 Deployment
 
 Project is deployed on ICP Mainnet.
-
 Canister IDs:
-
 Backend Canister: xxxx-xxxx-xxxx-xxxx
-
 Frontend Canister: yyyy-yyyy-yyyy-yyyy
-
-(Replace with actual IDs after mainnet deployment)
 
 👨‍👩‍👧 Team
 
 Surya Prasanna R D – AI/ML Engineer
-
 Sudharsanam A – Blockchain Developer
-
 Jaidheep S – IoT/Hardware Integration
-
 Shreevishal M – Frontend & UX
 
 📈 Roadmap
 
 🔜 Mainnet Deployment with live farmer testing
-
 🔜 Add decentralized marketplace for farm inputs/outputs
-
 🔜 Web App (Typescript + ICP integration)
-
 🔜 Expand to 10k+ farmers in pilot programs
 
 
